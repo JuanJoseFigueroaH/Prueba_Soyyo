@@ -23,17 +23,6 @@ const entityController = new EntityController();
  *          endId:
  *           type: number
  *           example: 10
- *    requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               name:
- *                 type: string
- *                 description: The user's name.
- *                 example: Leanne Graham
  *    responses:
  *       200:
  *         examples:
@@ -48,7 +37,7 @@ const entityController = new EntityController();
  *           }]
  */
 entityRoute.post(
-  'filter',
+  '/filter',
   entityController.filter
 );
 
