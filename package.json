@@ -10,7 +10,8 @@
     "lint": "eslint . --ext .ts",
     "lint-fix": "eslint . --ext .ts --fix",
     "prepare": "husky install",
-    "check-types": "tsc --pretty --noEmit"
+    "check-types": "tsc --pretty --noEmit",
+    "test": "jest"
   },
   "author": "Juan Jose Figueroa Hurtatis",
   "license": "ISC",
