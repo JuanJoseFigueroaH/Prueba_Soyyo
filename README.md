@@ -1,4 +1,4 @@
-# Prueba NodeJs
+# Prueba Soy Yo - Nodejs
 
 BackEnd para el proyecto prueba escrito en Nodejs y express con typescript
 
@@ -50,15 +50,15 @@ En cada ruta de la carpeta src/routes se debe llenar la documentación con JsDoc
 ```javascrpit
 /**
  * @swagger
- * /roles/:
+ * /entities/filter:
  *  patch:
- *    description: Api para modificar rol
+ *    description: Filtrar listado entidades ordenadas alfabeticamente
  *    responses:
  *      '200':
- *        description: Modificación satisfactoria
+ *        description: Lista Correcta
  *
  */
-providersCatalogRoute.patch('/:id', providersCatalogController.editOne)
+entityRoute.post('/filter', entityController.filter)
 ```
 Please make sure to update tests as appropriate.
 

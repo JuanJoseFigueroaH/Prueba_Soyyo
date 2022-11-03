@@ -3,7 +3,6 @@ import 'express-async-errors';
 import morgan from 'morgan';
 import cors from 'cors';
 import path from 'path';
-import mongoose from 'mongoose';
 import 'dotenv/config';
 import { NotFoundError } from './errors';
 import { errorHandler } from './middlewares';
@@ -11,17 +10,10 @@ import mainRoute from './routes/_main.route';
 import swaggerJsDoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
 
-// Conexión a la base de datos MongoDB
-mongoose.Promise = global.Promise;
-const dbUrl = `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`;
-mongoose.connect(dbUrl, { useCreateIndex: true, useNewUrlParser: true })
-  .then(mongoose => console.log('Conectado a la BD en el puerto 27017'))
-  .catch(err => console.log(err));
-
 const swaggerDocs = swaggerJsDoc({
   swaggerDefinition: {
     info: {
-      title: 'Prueba Linktic',
+      title: 'Prueba Soy Yo',
       description: 'Api Rest Prueba',
       version: '1.0',
       contact: {
