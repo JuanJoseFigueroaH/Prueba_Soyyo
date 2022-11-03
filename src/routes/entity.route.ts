@@ -1,8 +1,11 @@
 import { Router } from 'express';
 import EntityController from '../controllers/entity.controller';
+import EntityValidator from '../validators/entity.validator';
+import { validateRequest } from '../middlewares';
 
 const entityRoute = Router();
 const entityController = new EntityController();
+const entityValidator = new EntityValidator();
 
 /**
  * @swagger
@@ -35,6 +38,17 @@ const entityController = new EntityController();
  *              "contactEmail": "string",
  *              "logo": "string",
  *           }]
+ *       400:
+ *         description: Bad request
+ *         examples:
+ *           application/json: {
+ *              "errors": [
+ *                  {
+ *                    "message": "Start Id es requerido",
+ *                    "field": "startId"
+ *                  }
+ *              ]
+ *           }
  *       404:
  *         description: Bad request
  *         examples:
@@ -48,6 +62,8 @@ const entityController = new EntityController();
  */
 entityRoute.post(
   '/filter',
+  entityValidator.validateFields,
+  validateRequest,
   entityController.filter
 );
 
