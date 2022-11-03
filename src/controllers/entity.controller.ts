@@ -7,7 +7,7 @@ class EntityController extends BaseController {
     res: Response,
     next: NextFunction
   ) => {
-    let entity:any = [];
+    const entity:any = [];
     res.status(201).send(entity);
   };
 }
