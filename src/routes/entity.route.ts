@@ -35,6 +35,16 @@ const entityController = new EntityController();
  *              "contactEmail": "string",
  *              "logo": "string",
  *           }]
+ *       404:
+ *         description: Bad request
+ *         examples:
+ *           application/json: {
+ *              "errors": [
+ *                  {
+ *                    "message": "Error no se encuentra para rango especificado",
+ *                  }
+ *              ]
+ *           }
  */
 entityRoute.post(
   '/filter',
